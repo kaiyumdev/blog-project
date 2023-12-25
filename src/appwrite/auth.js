@@ -25,9 +25,18 @@ export class AuthService {
       );
       if (userAccount) {
         //call another method
+        return this.login({ email, password });
       } else {
         return userAccount;
       }
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async login({ email, password }) {
+    try {
+      return await this.account.createEmailSession(email, password);
     } catch (error) {
       throw error;
     }
