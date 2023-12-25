@@ -1,4 +1,4 @@
-import { Client, Databases, Query } from "appwrite";
+import { Client, Databases, ID, Query } from "appwrite";
 import conf from "../conf/conf";
 
 export class Service {
@@ -89,6 +89,20 @@ export class Service {
       );
     } catch (error) {
       console.log("appwrite service getPost: error", error);
+    }
+  }
+
+  //file upload service
+  async uploadFile(file) {
+    try {
+      return await this.bucket.createFile(
+        conf.appWriteBucketId,
+        ID.unique(),
+        file
+      );
+    } catch (error) {
+      console.log("uploadService getPost: error", error);
+      return false;
     }
   }
 }
