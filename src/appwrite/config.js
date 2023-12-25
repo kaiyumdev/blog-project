@@ -66,6 +66,19 @@ export class Service {
       return false;
     }
   }
+
+  async getPost(slug) {
+    try {
+      return await this.databases.getDocument(
+        conf.appWriteDatabaseId,
+        conf.appWriteCollectionId,
+        slug
+      );
+    } catch (error) {
+      console.log("appwrite service getPost: error", error);
+      return false;
+    }
+  }
 }
 
 const service = new Service();
