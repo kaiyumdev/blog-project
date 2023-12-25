@@ -105,6 +105,15 @@ export class Service {
       return false;
     }
   }
+
+  async deleteFile(fileId) {
+    try {
+      await this.bucket.deleteFile(conf.appWriteBucketId, fileId);
+      return true;
+    } catch (error) {
+      console.log("uploadService deleteFile: error", error);
+    }
+  }
 }
 
 const service = new Service();
