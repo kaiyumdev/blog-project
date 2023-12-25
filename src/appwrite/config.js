@@ -114,6 +114,14 @@ export class Service {
       console.log("uploadService deleteFile: error", error);
     }
   }
+
+  getFilePreview(fileId) {
+    try {
+      return this.bucket.getFilePreview(conf.appWriteBucketId, fileId);
+    } catch (error) {
+      console.log("uploadService getFilePreview: error", error);
+    }
+  }
 }
 
 const service = new Service();
