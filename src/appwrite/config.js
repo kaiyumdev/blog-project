@@ -3,7 +3,7 @@ import conf from "../conf/conf";
 
 export class Service {
   client = new Client();
-  database;
+  databases;
   bucket;
 
   constructor() {
@@ -11,13 +11,13 @@ export class Service {
       .setEndpoint(conf.appWriteUrl)
       .setProject(conf.appWriteProjectId);
 
-    this.database = new Databases(this.client);
+    this.databases = new Databases(this.client);
     this.bucket = new Storage(this.client);
   }
 
   async createPost({ title, slug, content, featuredImage, status, userId }) {
     try {
-      await this.database.createDocument(
+      await this.databases.createDocument(
         conf.appWriteDatabaseId,
         conf.appWriteCollectionId,
         slug,
@@ -30,7 +30,26 @@ export class Service {
         }
       );
     } catch (error) {
-      console.log("appwrite database error: " + error);
+      console.log("appwrite database error: ", error);
+    }
+  }
+
+  async updatePost(slug, { title, content, featuredImage, status, userId }) {
+    try {
+      return await this.databases.updateDocument(
+        conf.appWriteDatabaseId,
+        conf.appWriteCollectionId,
+        slug,
+        {
+          title,
+          content,
+          featuredImage,
+          status,
+          userId,
+        }
+      );
+    } catch (error) {
+      console.log("appwrite service updatePost: error", error);
     }
   }
 }
