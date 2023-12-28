@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Container from "../container/Container";
+import Logo from "../Logo";
+import LogoutBtn from "./LogoutBtn";
 
 const Header = () => {
   const authStatus = useSelector((state) => state.auth.status);
@@ -34,7 +37,38 @@ const Header = () => {
       active: authStatus,
     },
   ];
-  return <div>Header</div>;
+  return (
+    <div className="py-3 shadow bg-gray-500">
+      <Container>
+        <nav className="flex">
+          <div className="mr-4">
+            <Link to="/">
+              <Logo width="70px"></Logo>
+            </Link>
+          </div>
+          <ul className="flex ml-auto">
+            {navItems.map((item) =>
+              item.active ? (
+                <li key={item.name}>
+                  <button
+                    onClick={() => item.slug}
+                    className="inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full"
+                  >
+                    {item.name}
+                  </button>
+                </li>
+              ) : null
+            )}
+            {authStatus && (
+              <li>
+                <LogoutBtn></LogoutBtn>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </Container>
+    </div>
+  );
 };
 
 export default Header;
