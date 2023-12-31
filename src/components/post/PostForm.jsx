@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import appwriteService from "../../appwrite/config";
 
+//commit PostForm successfully completed
 const PostForm = ({ post }) => {
   const { register, handleSubmit, watch, setValue, control, setValues } =
     useForm({
@@ -19,6 +20,7 @@ const PostForm = ({ post }) => {
   const navigate = useNavigate();
   const userData = useSelector((state) => state.user.userData);
 
+  //create submit section
   const submit = async (data) => {
     if (post) {
       const file = data.image[0]
