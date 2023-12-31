@@ -11,7 +11,6 @@ import Input from "../Input";
 import { RTE } from "../RTE";
 import Button from "../Button";
 
-//commit PostForm successfully completed
 export const PostForm = ({ post }) => {
   const { register, handleSubmit, watch, setValue, control, setValues } =
     useForm({
