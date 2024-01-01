@@ -14,6 +14,7 @@ import AddPost from "./components/pages/AddPost.jsx";
 import EditPost from "./components/pages/EditPost.jsx";
 import Post from "./components/pages/Post.jsx";
 
+//create router
 const router = createBrowserRouter([
   {
     path: "/",
