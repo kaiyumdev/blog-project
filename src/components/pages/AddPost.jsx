@@ -1,8 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import Container from "../container/Container";
+import { PostForm } from "../post/PostForm";
 
 const AddPost = () => {
-  return <div>AddPost</div>;
+  return (
+    <div>
+      <Container>
+        <PostForm></PostForm>
+      </Container>
+    </div>
+  );
 };
 
 export default AddPost;
