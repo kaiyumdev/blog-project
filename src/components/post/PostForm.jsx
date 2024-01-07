@@ -11,6 +11,7 @@ import Input from "../Input";
 import { RTE } from "../RTE";
 import Button from "../Button";
 
+//create a postForm
 export const PostForm = ({ post }) => {
   const { register, handleSubmit, watch, setValue, control, setValues } =
     useForm({
@@ -22,7 +23,7 @@ export const PostForm = ({ post }) => {
       },
     });
   const navigate = useNavigate();
-  const userData = useSelector((state) => state.user.userData);
+  const userData = useSelector((state) => state.auth.userData);
 
   //create submit section
   const submit = async (data) => {
