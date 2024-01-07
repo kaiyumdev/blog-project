@@ -3,7 +3,6 @@ import React from "react";
 import Container from "../container/Container";
 import { PostForm } from "../post/PostForm";
 
-//commit AddPost successfully
 const AddPost = () => {
   return (
     <div>
