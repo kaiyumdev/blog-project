@@ -5,7 +5,7 @@ import appwriteService from "../../appwrite/config";
 import Container from "../container/Container";
 import { PostForm } from "../post/PostForm";
 
-//create EditPost successfully
+//updated EditPost successfully
 const EditPost = () => {
   const [post, setPost] = useState();
   const { slug } = useParams();
