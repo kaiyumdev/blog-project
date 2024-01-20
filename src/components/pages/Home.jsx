@@ -4,6 +4,7 @@ import appwriteService from "../../appwrite/config";
 import Container from "../container/Container";
 import PostCard from "../PostCard";
 
+//updated Home page successfully
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
