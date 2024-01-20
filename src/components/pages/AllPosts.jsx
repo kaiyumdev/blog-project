@@ -4,7 +4,6 @@ import appwriteService from "../../appwrite/config";
 import Container from "../container/Container";
 import PostCard from "../PostCard";
 
-//create AllPosts successfully
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
