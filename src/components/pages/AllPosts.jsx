@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import appwriteService from "../../appwrite/config";
 import Container from "../container/Container";
 import PostCard from "../PostCard";
-//updated AllPosts successfully
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
