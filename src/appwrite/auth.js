@@ -1,16 +1,13 @@
-/* eslint-disable no-useless-catch */
-/* eslint-disable no-unused-vars */
+import conf from "../conf/conf.js";
 import { Client, Account, ID } from "appwrite";
-import conf from "../conf/conf";
 
-//create authService
 export class AuthService {
   client = new Client();
   account;
 
   constructor() {
     this.client
-      .setEndpoint(conf.appWriteUrl)
+      .setEndpoint(conf.appwriteUrl)
       .setProject(conf.appwriteProjectId);
     this.account = new Account(this.client);
   }
@@ -62,4 +59,5 @@ export class AuthService {
 }
 
 const authService = new AuthService();
+
 export default authService;

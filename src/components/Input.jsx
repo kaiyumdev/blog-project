@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-empty-pattern */
+
 import React, { useId } from "react";
 
 const Input = React.forwardRef(function Input(
@@ -25,6 +26,6 @@ const Input = React.forwardRef(function Input(
       />
     </div>
   );
-},
-ref);
+});
+
 export default Input;
