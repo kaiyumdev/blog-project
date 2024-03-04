@@ -3,7 +3,7 @@ import React from "react";
 import Container from "../container/Container";
 import { PostForm } from "../post/PostForm";
 
-//updated AddPost successfully
+//updated addPost successfully
 const AddPost = () => {
   return (
     <div>
