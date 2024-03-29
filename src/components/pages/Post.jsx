@@ -6,6 +6,7 @@ import appwriteService from "../../appwrite/config";
 import Container from "../container/Container";
 import Button from "../Button";
 
+//updated Post successfully updated
 export default function Post() {
   const [post, setPost] = useState(null);
   const { slug } = useParams();
